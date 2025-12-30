@@ -1,0 +1,1042 @@
+{
+  "timestamp": "2025-12-30T23:02:33.012Z",
+  "experiments": [
+    {
+      "experimentId": "modules/named-vs-default",
+      "category": "modules",
+      "timestamp": "2025-12-30T23:02:32.694Z",
+      "variants": [
+        {
+          "variantId": "named-exports",
+          "description": "Named exports throughout",
+          "builds": {
+            "vite": {
+              "default": {
+                "size": {
+                  "raw": 1000,
+                  "minified": 1000,
+                  "gzipped": 477,
+                  "brotli": 417
+                },
+                "buildTimeMs": 180.77158300000002
+              },
+              "terser": {
+                "size": {
+                  "raw": 1103,
+                  "minified": 1103,
+                  "gzipped": 477,
+                  "brotli": 417
+                },
+                "buildTimeMs": 10.39387499999998
+              }
+            },
+            "swc": {
+              "default": {
+                "size": {
+                  "raw": 710,
+                  "minified": 710,
+                  "gzipped": 363,
+                  "brotli": 312
+                },
+                "buildTimeMs": 34.03250000000003
+              },
+              "terser": {
+                "size": {
+                  "raw": 710,
+                  "minified": 710,
+                  "gzipped": 363,
+                  "brotli": 312
+                },
+                "buildTimeMs": 2.01070900000002
+              }
+            }
+          }
+        },
+        {
+          "variantId": "default-exports",
+          "description": "Default exports where possible",
+          "builds": {
+            "vite": {
+              "default": {
+                "size": {
+                  "raw": 932,
+                  "minified": 932,
+                  "gzipped": 419,
+                  "brotli": 380
+                },
+                "buildTimeMs": 11.236125000000015
+              },
+              "terser": {
+                "size": {
+                  "raw": 1094,
+                  "minified": 1094,
+                  "gzipped": 449,
+                  "brotli": 391
+                },
+                "buildTimeMs": 8.978375000000028
+              }
+            },
+            "swc": {
+              "default": {
+                "size": {
+                  "raw": 403,
+                  "minified": 403,
+                  "gzipped": 265,
+                  "brotli": 226
+                },
+                "buildTimeMs": 3.033457999999996
+              },
+              "terser": {
+                "size": {
+                  "raw": 403,
+                  "minified": 403,
+                  "gzipped": 265,
+                  "brotli": 226
+                },
+                "buildTimeMs": 1.1031249999999773
+              }
+            }
+          }
+        },
+        {
+          "variantId": "mixed-exports",
+          "description": "Mix of named and default exports",
+          "builds": {
+            "vite": {
+              "default": {
+                "size": {
+                  "raw": 1016,
+                  "minified": 1016,
+                  "gzipped": 481,
+                  "brotli": 422
+                },
+                "buildTimeMs": 10.33320900000001
+              },
+              "terser": {
+                "size": {
+                  "raw": 1137,
+                  "minified": 1137,
+                  "gzipped": 483,
+                  "brotli": 421
+                },
+                "buildTimeMs": 7.78875000000005
+              }
+            },
+            "swc": {
+              "default": {
+                "size": {
+                  "raw": 745,
+                  "minified": 745,
+                  "gzipped": 370,
+                  "brotli": 316
+                },
+                "buildTimeMs": 1.6889999999999645
+              },
+              "terser": {
+                "size": {
+                  "raw": 745,
+                  "minified": 745,
+                  "gzipped": 370,
+                  "brotli": 316
+                },
+                "buildTimeMs": 1.410916000000043
+              }
+            }
+          }
+        }
+      ],
+      "metadata": {
+        "nodeVersion": "v22.21.0",
+        "platform": "darwin"
+      }
+    },
+    {
+      "experimentId": "loops/array-iteration",
+      "category": "loops",
+      "timestamp": "2025-12-30T23:02:32.799Z",
+      "variants": [
+        {
+          "variantId": "for-index",
+          "description": "Traditional for loop with index",
+          "builds": {
+            "vite": {
+              "default": {
+                "size": {
+                  "raw": 999,
+                  "minified": 999,
+                  "gzipped": 470,
+                  "brotli": 410
+                },
+                "buildTimeMs": 9.973541999999952
+              },
+              "terser": {
+                "size": {
+                  "raw": 1305,
+                  "minified": 1305,
+                  "gzipped": 518,
+                  "brotli": 444
+                },
+                "buildTimeMs": 9.243458999999916
+              }
+            },
+            "swc": {
+              "default": {
+                "size": {
+                  "raw": 665,
+                  "minified": 665,
+                  "gzipped": 379,
+                  "brotli": 342
+                },
+                "buildTimeMs": 1.731375000000071
+              },
+              "terser": {
+                "size": {
+                  "raw": 665,
+                  "minified": 665,
+                  "gzipped": 379,
+                  "brotli": 342
+                },
+                "buildTimeMs": 1.4395000000000664
+              }
+            }
+          }
+        },
+        {
+          "variantId": "for-of",
+          "description": "ES6 for...of loop",
+          "builds": {
+            "vite": {
+              "default": {
+                "size": {
+                  "raw": 916,
+                  "minified": 916,
+                  "gzipped": 437,
+                  "brotli": 377
+                },
+                "buildTimeMs": 12.226249999999936
+              },
+              "terser": {
+                "size": {
+                  "raw": 1227,
+                  "minified": 1227,
+                  "gzipped": 496,
+                  "brotli": 444
+                },
+                "buildTimeMs": 10.289750000000026
+              }
+            },
+            "swc": {
+              "default": {
+                "size": {
+                  "raw": 608,
+                  "minified": 608,
+                  "gzipped": 351,
+                  "brotli": 300
+                },
+                "buildTimeMs": 1.9040410000000065
+              },
+              "terser": {
+                "size": {
+                  "raw": 608,
+                  "minified": 608,
+                  "gzipped": 351,
+                  "brotli": 300
+                },
+                "buildTimeMs": 1.4303330000000187
+              }
+            }
+          }
+        },
+        {
+          "variantId": "forEach",
+          "description": "Array.prototype.forEach",
+          "builds": {
+            "vite": {
+              "default": {
+                "size": {
+                  "raw": 928,
+                  "minified": 928,
+                  "gzipped": 440,
+                  "brotli": 387
+                },
+                "buildTimeMs": 8.030582999999979
+              },
+              "terser": {
+                "size": {
+                  "raw": 1227,
+                  "minified": 1227,
+                  "gzipped": 495,
+                  "brotli": 428
+                },
+                "buildTimeMs": 6.7999999999999545
+              }
+            },
+            "swc": {
+              "default": {
+                "size": {
+                  "raw": 561,
+                  "minified": 561,
+                  "gzipped": 347,
+                  "brotli": 316
+                },
+                "buildTimeMs": 2.1824169999999867
+              },
+              "terser": {
+                "size": {
+                  "raw": 561,
+                  "minified": 561,
+                  "gzipped": 347,
+                  "brotli": 316
+                },
+                "buildTimeMs": 2.3423329999999396
+              }
+            }
+          }
+        },
+        {
+          "variantId": "map",
+          "description": "Array.prototype.map",
+          "builds": {
+            "vite": {
+              "default": {
+                "size": {
+                  "raw": 833,
+                  "minified": 833,
+                  "gzipped": 419,
+                  "brotli": 368
+                },
+                "buildTimeMs": 6.438957999999957
+              },
+              "terser": {
+                "size": {
+                  "raw": 1062,
+                  "minified": 1062,
+                  "gzipped": 451,
+                  "brotli": 395
+                },
+                "buildTimeMs": 5.89712499999996
+              }
+            },
+            "swc": {
+              "default": {
+                "size": {
+                  "raw": 513,
+                  "minified": 513,
+                  "gzipped": 325,
+                  "brotli": 271
+                },
+                "buildTimeMs": 1.4664589999999862
+              },
+              "terser": {
+                "size": {
+                  "raw": 513,
+                  "minified": 513,
+                  "gzipped": 325,
+                  "brotli": 271
+                },
+                "buildTimeMs": 1.1825410000000147
+              }
+            }
+          }
+        },
+        {
+          "variantId": "reduce",
+          "description": "Array.prototype.reduce",
+          "builds": {
+            "vite": {
+              "default": {
+                "size": {
+                  "raw": 867,
+                  "minified": 867,
+                  "gzipped": 431,
+                  "brotli": 372
+                },
+                "buildTimeMs": 6.236332999999945
+              },
+              "terser": {
+                "size": {
+                  "raw": 1171,
+                  "minified": 1171,
+                  "gzipped": 482,
+                  "brotli": 414
+                },
+                "buildTimeMs": 10.148874999999975
+              }
+            },
+            "swc": {
+              "default": {
+                "size": {
+                  "raw": 547,
+                  "minified": 547,
+                  "gzipped": 331,
+                  "brotli": 279
+                },
+                "buildTimeMs": 1.6606250000000955
+              },
+              "terser": {
+                "size": {
+                  "raw": 547,
+                  "minified": 547,
+                  "gzipped": 331,
+                  "brotli": 279
+                },
+                "buildTimeMs": 1.269416000000092
+              }
+            }
+          }
+        }
+      ],
+      "metadata": {
+        "nodeVersion": "v22.21.0",
+        "platform": "darwin"
+      }
+    },
+    {
+      "experimentId": "typescript/enum-vs-const",
+      "category": "typescript",
+      "timestamp": "2025-12-30T23:02:32.864Z",
+      "variants": [
+        {
+          "variantId": "enum",
+          "description": "Standard TypeScript enum",
+          "builds": {
+            "vite": {
+              "default": {
+                "size": {
+                  "raw": 1066,
+                  "minified": 1066,
+                  "gzipped": 469,
+                  "brotli": 390
+                },
+                "buildTimeMs": 6.466750000000047
+              },
+              "terser": {
+                "size": {
+                  "raw": 1252,
+                  "minified": 1252,
+                  "gzipped": 511,
+                  "brotli": 424
+                },
+                "buildTimeMs": 5.8179589999999735
+              }
+            },
+            "swc": {
+              "default": {
+                "size": {
+                  "raw": 902,
+                  "minified": 902,
+                  "gzipped": 461,
+                  "brotli": 384
+                },
+                "buildTimeMs": 2.1170419999999694
+              },
+              "terser": {
+                "size": {
+                  "raw": 902,
+                  "minified": 902,
+                  "gzipped": 461,
+                  "brotli": 384
+                },
+                "buildTimeMs": 1.5987080000001015
+              }
+            }
+          }
+        },
+        {
+          "variantId": "const-enum",
+          "description": "TypeScript const enum (inlined at compile time)",
+          "builds": {
+            "vite": {
+              "default": {
+                "size": {
+                  "raw": 1066,
+                  "minified": 1066,
+                  "gzipped": 469,
+                  "brotli": 390
+                },
+                "buildTimeMs": 6.042541000000028
+              },
+              "terser": {
+                "size": {
+                  "raw": 1252,
+                  "minified": 1252,
+                  "gzipped": 511,
+                  "brotli": 424
+                },
+                "buildTimeMs": 5.946416999999997
+              }
+            },
+            "swc": {
+              "default": {
+                "size": {
+                  "raw": 672,
+                  "minified": 672,
+                  "gzipped": 349,
+                  "brotli": 280
+                },
+                "buildTimeMs": 1.5092079999999441
+              },
+              "terser": {
+                "size": {
+                  "raw": 672,
+                  "minified": 672,
+                  "gzipped": 349,
+                  "brotli": 280
+                },
+                "buildTimeMs": 1.6013340000000653
+              }
+            }
+          }
+        },
+        {
+          "variantId": "const-object",
+          "description": "const object with 'as const' assertion",
+          "builds": {
+            "vite": {
+              "default": {
+                "size": {
+                  "raw": 1178,
+                  "minified": 1178,
+                  "gzipped": 529,
+                  "brotli": 458
+                },
+                "buildTimeMs": 6.277458000000024
+              },
+              "terser": {
+                "size": {
+                  "raw": 1471,
+                  "minified": 1471,
+                  "gzipped": 576,
+                  "brotli": 496
+                },
+                "buildTimeMs": 9.387333000000012
+              }
+            },
+            "swc": {
+              "default": {
+                "size": {
+                  "raw": 666,
+                  "minified": 666,
+                  "gzipped": 357,
+                  "brotli": 289
+                },
+                "buildTimeMs": 1.4863749999999527
+              },
+              "terser": {
+                "size": {
+                  "raw": 666,
+                  "minified": 666,
+                  "gzipped": 357,
+                  "brotli": 289
+                },
+                "buildTimeMs": 1.7114579999999933
+              }
+            }
+          }
+        },
+        {
+          "variantId": "string-union",
+          "description": "String union type (type-only, erased at runtime)",
+          "builds": {
+            "vite": {
+              "default": {
+                "size": {
+                  "raw": 948,
+                  "minified": 948,
+                  "gzipped": 439,
+                  "brotli": 365
+                },
+                "buildTimeMs": 6.077417000000082
+              },
+              "terser": {
+                "size": {
+                  "raw": 1134,
+                  "minified": 1134,
+                  "gzipped": 480,
+                  "brotli": 390
+                },
+                "buildTimeMs": 5.196958000000109
+              }
+            },
+            "swc": {
+              "default": {
+                "size": {
+                  "raw": 672,
+                  "minified": 672,
+                  "gzipped": 349,
+                  "brotli": 280
+                },
+                "buildTimeMs": 1.5796249999999645
+              },
+              "terser": {
+                "size": {
+                  "raw": 672,
+                  "minified": 672,
+                  "gzipped": 349,
+                  "brotli": 280
+                },
+                "buildTimeMs": 1.2606250000000045
+              }
+            }
+          }
+        }
+      ],
+      "metadata": {
+        "nodeVersion": "v22.21.0",
+        "platform": "darwin"
+      }
+    },
+    {
+      "experimentId": "async/await-vs-promise",
+      "category": "async",
+      "timestamp": "2025-12-30T23:02:32.921Z",
+      "variants": [
+        {
+          "variantId": "async-await",
+          "description": "async/await syntax",
+          "builds": {
+            "vite": {
+              "default": {
+                "size": {
+                  "raw": 1070,
+                  "minified": 1070,
+                  "gzipped": 532,
+                  "brotli": 468
+                },
+                "buildTimeMs": 6.528749999999945
+              },
+              "terser": {
+                "size": {
+                  "raw": 1472,
+                  "minified": 1472,
+                  "gzipped": 603,
+                  "brotli": 523
+                },
+                "buildTimeMs": 5.957084000000009
+              }
+            },
+            "swc": {
+              "default": {
+                "size": {
+                  "raw": 789,
+                  "minified": 789,
+                  "gzipped": 446,
+                  "brotli": 395
+                },
+                "buildTimeMs": 2.1478329999999914
+              },
+              "terser": {
+                "size": {
+                  "raw": 789,
+                  "minified": 789,
+                  "gzipped": 446,
+                  "brotli": 395
+                },
+                "buildTimeMs": 1.4233749999999645
+              }
+            }
+          }
+        },
+        {
+          "variantId": "promise-then",
+          "description": "Promise.then() chains",
+          "builds": {
+            "vite": {
+              "default": {
+                "size": {
+                  "raw": 1038,
+                  "minified": 1038,
+                  "gzipped": 523,
+                  "brotli": 460
+                },
+                "buildTimeMs": 5.894125000000031
+              },
+              "terser": {
+                "size": {
+                  "raw": 1588,
+                  "minified": 1588,
+                  "gzipped": 607,
+                  "brotli": 527
+                },
+                "buildTimeMs": 12.121458999999959
+              }
+            },
+            "swc": {
+              "default": {
+                "size": {
+                  "raw": 752,
+                  "minified": 752,
+                  "gzipped": 442,
+                  "brotli": 379
+                },
+                "buildTimeMs": 1.9842909999999847
+              },
+              "terser": {
+                "size": {
+                  "raw": 752,
+                  "minified": 752,
+                  "gzipped": 442,
+                  "brotli": 379
+                },
+                "buildTimeMs": 1.532542000000035
+              }
+            }
+          }
+        },
+        {
+          "variantId": "promise-all-await",
+          "description": "Promise.all with await",
+          "builds": {
+            "vite": {
+              "default": {
+                "size": {
+                  "raw": 1028,
+                  "minified": 1028,
+                  "gzipped": 520,
+                  "brotli": 462
+                },
+                "buildTimeMs": 8.82508299999995
+              },
+              "terser": {
+                "size": {
+                  "raw": 1434,
+                  "minified": 1434,
+                  "gzipped": 597,
+                  "brotli": 514
+                },
+                "buildTimeMs": 5.996125000000006
+              }
+            },
+            "swc": {
+              "default": {
+                "size": {
+                  "raw": 770,
+                  "minified": 770,
+                  "gzipped": 434,
+                  "brotli": 379
+                },
+                "buildTimeMs": 1.7244170000000167
+              },
+              "terser": {
+                "size": {
+                  "raw": 770,
+                  "minified": 770,
+                  "gzipped": 434,
+                  "brotli": 379
+                },
+                "buildTimeMs": 1.4284159999999702
+              }
+            }
+          }
+        }
+      ],
+      "metadata": {
+        "nodeVersion": "v22.21.0",
+        "platform": "darwin"
+      }
+    },
+    {
+      "experimentId": "functions/arrow-vs-declaration",
+      "category": "functions",
+      "timestamp": "2025-12-30T23:02:32.975Z",
+      "variants": [
+        {
+          "variantId": "arrow-functions",
+          "description": "Arrow function expressions",
+          "builds": {
+            "vite": {
+              "default": {
+                "size": {
+                  "raw": 1027,
+                  "minified": 1027,
+                  "gzipped": 452,
+                  "brotli": 390
+                },
+                "buildTimeMs": 6.582583999999997
+              },
+              "terser": {
+                "size": {
+                  "raw": 1400,
+                  "minified": 1400,
+                  "gzipped": 533,
+                  "brotli": 464
+                },
+                "buildTimeMs": 6.841125000000034
+              }
+            },
+            "swc": {
+              "default": {
+                "size": {
+                  "raw": 582,
+                  "minified": 582,
+                  "gzipped": 336,
+                  "brotli": 286
+                },
+                "buildTimeMs": 1.7108749999999873
+              },
+              "terser": {
+                "size": {
+                  "raw": 582,
+                  "minified": 582,
+                  "gzipped": 336,
+                  "brotli": 286
+                },
+                "buildTimeMs": 1.347332999999935
+              }
+            }
+          }
+        },
+        {
+          "variantId": "function-declarations",
+          "description": "Traditional function declarations",
+          "builds": {
+            "vite": {
+              "default": {
+                "size": {
+                  "raw": 1289,
+                  "minified": 1289,
+                  "gzipped": 475,
+                  "brotli": 410
+                },
+                "buildTimeMs": 6.946083000000044
+              },
+              "terser": {
+                "size": {
+                  "raw": 1626,
+                  "minified": 1626,
+                  "gzipped": 554,
+                  "brotli": 492
+                },
+                "buildTimeMs": 8.068667000000005
+              }
+            },
+            "swc": {
+              "default": {
+                "size": {
+                  "raw": 717,
+                  "minified": 717,
+                  "gzipped": 352,
+                  "brotli": 296
+                },
+                "buildTimeMs": 2.0852500000000873
+              },
+              "terser": {
+                "size": {
+                  "raw": 717,
+                  "minified": 717,
+                  "gzipped": 352,
+                  "brotli": 296
+                },
+                "buildTimeMs": 1.5076660000000857
+              }
+            }
+          }
+        },
+        {
+          "variantId": "function-expressions",
+          "description": "Named function expressions",
+          "builds": {
+            "vite": {
+              "default": {
+                "size": {
+                  "raw": 1309,
+                  "minified": 1309,
+                  "gzipped": 481,
+                  "brotli": 414
+                },
+                "buildTimeMs": 6.47016700000006
+              },
+              "terser": {
+                "size": {
+                  "raw": 1842,
+                  "minified": 1842,
+                  "gzipped": 608,
+                  "brotli": 547
+                },
+                "buildTimeMs": 6.801459000000023
+              }
+            },
+            "swc": {
+              "default": {
+                "size": {
+                  "raw": 756,
+                  "minified": 756,
+                  "gzipped": 362,
+                  "brotli": 310
+                },
+                "buildTimeMs": 1.72362499999997
+              },
+              "terser": {
+                "size": {
+                  "raw": 756,
+                  "minified": 756,
+                  "gzipped": 362,
+                  "brotli": 310
+                },
+                "buildTimeMs": 1.4855000000000018
+              }
+            }
+          }
+        }
+      ],
+      "metadata": {
+        "nodeVersion": "v22.21.0",
+        "platform": "darwin"
+      }
+    },
+    {
+      "experimentId": "jsx/fragments",
+      "category": "jsx",
+      "timestamp": "2025-12-30T23:02:33.012Z",
+      "variants": [
+        {
+          "variantId": "shorthand",
+          "description": "Short syntax: <></>",
+          "builds": {
+            "vite": {
+              "default": {
+                "size": {
+                  "raw": 635,
+                  "minified": 635,
+                  "gzipped": 314,
+                  "brotli": 269
+                },
+                "buildTimeMs": 5.275209000000018
+              },
+              "terser": {
+                "size": {
+                  "raw": 742,
+                  "minified": 742,
+                  "gzipped": 314,
+                  "brotli": 269
+                },
+                "buildTimeMs": 4.253916000000004
+              }
+            },
+            "swc": {
+              "default": {
+                "size": {
+                  "raw": 406,
+                  "minified": 406,
+                  "gzipped": 256,
+                  "brotli": 216
+                },
+                "buildTimeMs": 1.3082079999999223
+              },
+              "terser": {
+                "size": {
+                  "raw": 406,
+                  "minified": 406,
+                  "gzipped": 256,
+                  "brotli": 216
+                },
+                "buildTimeMs": 1.0637909999999238
+              }
+            }
+          }
+        },
+        {
+          "variantId": "explicit-fragment",
+          "description": "Explicit: <Fragment></Fragment>",
+          "builds": {
+            "vite": {
+              "default": {
+                "size": {
+                  "raw": 658,
+                  "minified": 658,
+                  "gzipped": 318,
+                  "brotli": 272
+                },
+                "buildTimeMs": 5.040624999999977
+              },
+              "terser": {
+                "size": {
+                  "raw": 765,
+                  "minified": 765,
+                  "gzipped": 317,
+                  "brotli": 291
+                },
+                "buildTimeMs": 5.740708000000041
+              }
+            },
+            "swc": {
+              "default": {
+                "size": {
+                  "raw": 424,
+                  "minified": 424,
+                  "gzipped": 259,
+                  "brotli": 214
+                },
+                "buildTimeMs": 1.1829159999999774
+              },
+              "terser": {
+                "size": {
+                  "raw": 424,
+                  "minified": 424,
+                  "gzipped": 259,
+                  "brotli": 214
+                },
+                "buildTimeMs": 0.998540999999932
+              }
+            }
+          }
+        },
+        {
+          "variantId": "wrapper-div",
+          "description": "Wrapper div element",
+          "builds": {
+            "vite": {
+              "default": {
+                "size": {
+                  "raw": 621,
+                  "minified": 621,
+                  "gzipped": 305,
+                  "brotli": 260
+                },
+                "buildTimeMs": 4.722375000000056
+              },
+              "terser": {
+                "size": {
+                  "raw": 719,
+                  "minified": 719,
+                  "gzipped": 305,
+                  "brotli": 250
+                },
+                "buildTimeMs": 4.3805830000000014
+              }
+            },
+            "swc": {
+              "default": {
+                "size": {
+                  "raw": 393,
+                  "minified": 393,
+                  "gzipped": 248,
+                  "brotli": 202
+                },
+                "buildTimeMs": 1.0058339999999362
+              },
+              "terser": {
+                "size": {
+                  "raw": 393,
+                  "minified": 393,
+                  "gzipped": 248,
+                  "brotli": 202
+                },
+                "buildTimeMs": 0.8908750000000509
+              }
+            }
+          }
+        }
+      ],
+      "metadata": {
+        "nodeVersion": "v22.21.0",
+        "platform": "darwin"
+      }
+    }
+  ],
+  "metadata": {
+    "nodeVersion": "v22.21.0",
+    "platform": "darwin",
+    "totalBuildTimeMs": 594.016333
+  }
+}

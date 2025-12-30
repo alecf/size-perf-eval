@@ -1,0 +1,23 @@
+{
+  "name": "named-vs-default",
+  "category": "modules",
+  "description": "Compare named exports vs default exports for bundle size and tree-shaking",
+  "variants": [
+    {
+      "id": "named-exports",
+      "file": "variants/named-exports.tsx",
+      "description": "Named exports throughout"
+    },
+    {
+      "id": "default-exports",
+      "file": "variants/default-exports.tsx",
+      "description": "Default exports where possible"
+    },
+    {
+      "id": "mixed-exports",
+      "file": "variants/mixed-exports.tsx",
+      "description": "Mix of named and default exports"
+    }
+  ],
+  "tags": ["modules", "exports", "tree-shaking"]
+}

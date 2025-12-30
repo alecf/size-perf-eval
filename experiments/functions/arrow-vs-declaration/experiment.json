@@ -1,0 +1,23 @@
+{
+  "name": "arrow-vs-declaration",
+  "category": "functions",
+  "description": "Compare arrow functions vs function declarations for bundle size",
+  "variants": [
+    {
+      "id": "arrow-functions",
+      "file": "variants/arrow-functions.tsx",
+      "description": "Arrow function expressions"
+    },
+    {
+      "id": "function-declarations",
+      "file": "variants/function-declarations.tsx",
+      "description": "Traditional function declarations"
+    },
+    {
+      "id": "function-expressions",
+      "file": "variants/function-expressions.tsx",
+      "description": "Named function expressions"
+    }
+  ],
+  "tags": ["functions", "syntax"]
+}

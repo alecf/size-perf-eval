@@ -1,0 +1,33 @@
+{
+  "name": "array-iteration",
+  "category": "loops",
+  "description": "Compare array iteration methods for bundle size: for, for-of, forEach, map, reduce",
+  "variants": [
+    {
+      "id": "for-index",
+      "file": "variants/for-index.tsx",
+      "description": "Traditional for loop with index"
+    },
+    {
+      "id": "for-of",
+      "file": "variants/for-of.tsx",
+      "description": "ES6 for...of loop"
+    },
+    {
+      "id": "forEach",
+      "file": "variants/forEach.tsx",
+      "description": "Array.prototype.forEach"
+    },
+    {
+      "id": "map",
+      "file": "variants/map.tsx",
+      "description": "Array.prototype.map"
+    },
+    {
+      "id": "reduce",
+      "file": "variants/reduce.tsx",
+      "description": "Array.prototype.reduce"
+    }
+  ],
+  "tags": ["loops", "arrays", "iteration"]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "await-vs-promise",
+  "category": "async",
+  "description": "Compare async/await vs Promise.then() chains for bundle size",
+  "variants": [
+    {
+      "id": "async-await",
+      "file": "variants/async-await.tsx",
+      "description": "async/await syntax"
+    },
+    {
+      "id": "promise-then",
+      "file": "variants/promise-then.tsx",
+      "description": "Promise.then() chains"
+    },
+    {
+      "id": "promise-all-await",
+      "file": "variants/promise-all-await.tsx",
+      "description": "Promise.all with await"
+    }
+  ],
+  "tags": ["async", "promises", "await"]
+}

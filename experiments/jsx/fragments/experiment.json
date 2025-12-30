@@ -1,0 +1,23 @@
+{
+  "name": "fragments",
+  "category": "jsx",
+  "description": "Compare JSX fragment syntaxes: <>, React.Fragment, wrapper div",
+  "variants": [
+    {
+      "id": "shorthand",
+      "file": "variants/shorthand.tsx",
+      "description": "Short syntax: <></>"
+    },
+    {
+      "id": "explicit-fragment",
+      "file": "variants/explicit-fragment.tsx",
+      "description": "Explicit: <Fragment></Fragment>"
+    },
+    {
+      "id": "wrapper-div",
+      "file": "variants/wrapper-div.tsx",
+      "description": "Wrapper div element"
+    }
+  ],
+  "tags": ["jsx", "fragments", "react"]
+}
