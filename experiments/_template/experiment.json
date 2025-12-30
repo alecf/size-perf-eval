@@ -1,0 +1,22 @@
+{
+  "name": "template-experiment",
+  "category": "template",
+  "description": "Template experiment - copy this to create new experiments",
+  "variants": [
+    {
+      "id": "variant-a",
+      "file": "variants/variant-a.tsx",
+      "description": "First approach"
+    },
+    {
+      "id": "variant-b",
+      "file": "variants/variant-b.tsx",
+      "description": "Second approach"
+    }
+  ],
+  "config": {
+    "iterations": 3,
+    "performanceBenchmark": true
+  },
+  "tags": ["template"]
+}
