@@ -38,12 +38,23 @@ Results from systematic experiments comparing TypeScript/React code patterns for
 // BEST: String union (type-only, erased)
 type Status = "pending" | "active" | "done";
 
-// GOOD with SWC: Const enum (inlined)
+// GOOD with SWC: Const enum (inlined, same size as string union)
 const enum Priority { Low = 1, High = 2 }
 
-// AVOID: Regular enum (adds runtime object)
+// OKAY: Regular enum (adds ~230 bytes runtime object)
 enum Status { Pending, Active, Done }
+
+// AVOID: Const object (larger bundle AND 4-5x slower!)
+const Status = { Pending: "pending", Active: "active" } as const;
 ```
+
+### Performance Note
+
+Runtime performance testing (10M iterations) shows:
+- **enum, const enum, string literals**: ~6ms (identical - V8 optimizes them)
+- **const object (`as const`)**: ~28ms (**4-5x slower** due to property lookups)
+
+The popular `as const` pattern is both larger AND significantly slower than alternatives!
 
 ---
 
