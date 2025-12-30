@@ -3,3 +3,4 @@ dist/
 results/raw/
 .next/
 *.tsbuildinfo
+.claude
