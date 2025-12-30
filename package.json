@@ -1,0 +1,31 @@
+{
+  "name": "size-perf-eval",
+  "version": "0.1.0",
+  "description": "Suite of experiments to learn what makes code fast and how compilation plays a role",
+  "license": "MIT",
+  "author": "Alec Flett <alecflett@gmail.com>",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "experiment:all": "node --import tsx runner/experiment-runner.ts --all",
+    "experiment:single": "node --import tsx runner/experiment-runner.ts --single",
+    "experiment:category": "node --import tsx runner/experiment-runner.ts --category"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.0",
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "glob": "^11.0.0",
+    "next": "^15.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "terser": "^5.37.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.9.3",
+    "vite": "^6.0.0",
+    "zod": "^3.24.0"
+  }
+}
