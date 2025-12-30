@@ -1,0 +1,28 @@
+{
+  "name": "enum-vs-const",
+  "category": "typescript",
+  "description": "Compare TypeScript enums vs const objects vs string unions for bundle size",
+  "variants": [
+    {
+      "id": "enum",
+      "file": "variants/enum.tsx",
+      "description": "Standard TypeScript enum"
+    },
+    {
+      "id": "const-enum",
+      "file": "variants/const-enum.tsx",
+      "description": "TypeScript const enum (inlined at compile time)"
+    },
+    {
+      "id": "const-object",
+      "file": "variants/const-object.tsx",
+      "description": "const object with 'as const' assertion"
+    },
+    {
+      "id": "string-union",
+      "file": "variants/string-union.tsx",
+      "description": "String union type (type-only, erased at runtime)"
+    }
+  ],
+  "tags": ["typescript", "enum", "types"]
+}

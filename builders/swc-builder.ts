@@ -49,6 +49,7 @@ export class SwcBuilder extends BaseBuilder {
       // Minify if requested
       if (config.minify) {
         const minified = minifySync(output, {
+          module: true, // Tell SWC this is ESM, not a script
           compress: {
             passes: 2,
             pure_funcs: ["console.log", "console.debug"],
