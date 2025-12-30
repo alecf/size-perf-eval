@@ -230,6 +230,47 @@ const posts = await fetchPosts(user.id);
 
 ---
 
+## Performance vs Size Trade-offs
+
+**Important:** Some patterns that produce smaller bundles are significantly slower at runtime.
+
+| Category | Smallest Bundle | Fastest Runtime | Trade-off |
+|----------|-----------------|-----------------|-----------|
+| Loops | `.map()` | `for (i=0...)` | **map is 4x slower** |
+| Objects | spread `{...}` | destructure/direct | **spread is 4x slower** |
+| Strings | template literal | `+` concat | Both fast |
+| Enums | string union | all equal | No trade-off |
+
+### Loop Performance (1M iterations × 1000 items)
+
+| Pattern | Time | Bundle Size | Recommendation |
+|---------|------|-------------|----------------|
+| `for (i=0...)` | 546ms | largest | Hot paths only |
+| `.reduce()` | 566ms | medium | Good balance |
+| `for...of` | 617ms | medium | **Best balance** |
+| `.forEach()` | 984ms | medium | Avoid |
+| `.map()` | 2133ms | smallest | Non-critical paths |
+
+### Object Performance (1M iterations)
+
+| Pattern | Time | Notes |
+|---------|------|-------|
+| destructure/direct | 4ms | Fastest |
+| manual copy | 7ms | +68% |
+| `{...spread}` | 19ms | **+365%** - avoid in hot paths |
+| `Object.assign()` | 70ms | **+1596%** - avoid |
+
+### Balanced Recommendations
+
+For size-critical projects that also care about performance:
+
+1. **Loops**: Use `for...of` (13% slower than for-index, but cleaner)
+2. **Objects**: Use destructuring, avoid spread in hot code
+3. **Enums**: String unions (smallest + fast)
+4. **Strings**: Template literals or `+` concatenation (both fast)
+
+---
+
 ## Raw Data
 
 Full experiment results are in `results/reports/summary.json`.
